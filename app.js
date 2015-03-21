@@ -1,0 +1,1 @@
+var gdgApp = angular.module('gdgApp', [ 'gdgModule', 'ngResource' ]);

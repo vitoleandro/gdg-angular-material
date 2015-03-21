@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="gdgApp">
+
+<div ng-controller="UserController">
+    <label>Lista De Usuários</label>
+
+    <input ng-model="busca"/>
+
+    <label>Usuários</label>
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="user in users | filter: busca ">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <th>
+                <button ng-click=""> Editar</button>
+                <button ng-click="delete(user.id)">Deletar</button>
+            </th>
+        </tr>
+    </table>
+
+</div>
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+<script src="app/gdg/gdg.module.js"></script>
+<script src="app/gdg/gdg.resource.js"></script>
+<script src="app/gdg/gdg.controller2.js"></script>
+
+
+</body>
+</html>
